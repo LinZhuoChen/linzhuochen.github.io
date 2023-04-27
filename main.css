@@ -3,20 +3,20 @@
 
 body {
     font-family: georgia,serif;
-    font-size: medium;
+    font-size: large;
 } 
 
-A:link {background: none; color: #C33833; text-decoration: none; cursor: pointer;}
-A:visited {background: none; color: #C33833; text-decoration: none; cursor: pointer;}
-A:hover {background: none; color: #C33833; text-decoration: none; cursor: pointer;}
-A:active { background: none; color: #C33833; background: none; cursor: pointer;}
+A:link {background: none; color: #0a39f8; text-decoration: none; cursor: pointer;}
+A:visited {background: none; color: #0963e9; text-decoration: none; cursor: pointer;}
+A:hover {background: none; color: #0a39f8; text-decoration: none; cursor: pointer;}
+A:active { background: none; color: #0a39f8; background: none; cursor: pointer;}
 
 .global {
 width: 900px;
 height: 100%;
 margin-left: auto;
 margin-right: auto;
-background: white;
+background: rgb(168, 227, 242);
 }
 
 .global TD {
@@ -74,7 +74,7 @@ html {
 .sidebar {
     text-align: center;
     padding: 2rem 1rem;
-    box-shadow: 0 0 8px 2px rgba(0, 0, 0, .5);
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.5);
 }
 @media (min-width: 48em) {
     .sidebar {
@@ -89,12 +89,12 @@ html {
 
 /* Sidebar links */
 .sidebar a {
-    color: #fff;
+    color: #a3a00fd3;
 }
 
 /* About section */
 .sidebar-about h1 {
-    color: #fff;
+    color: #0d2bd4;
     margin-top: 0;
     font-family: "Abril Fatface", serif;
     font-size: 3.25rem;
@@ -117,7 +117,7 @@ a.sidebar-nav-item:focus {
 }
 
 .nav-button {
-    background-color: #C33833; /* Green */
+    background-color: #0d36af; /* Green */
     border: none;
     color: white;
     padding: 5px 0;
@@ -125,7 +125,7 @@ a.sidebar-nav-item:focus {
     text-align: center;
     text-decoration: none;
     /*display: inline-block;*/
-    font-size: 16px;
+    font-size: 21px;
     margin: 4px 2px;
     cursor: pointer;
     -webkit-transition-duration: 0.4s; /* Safari */
@@ -151,7 +151,7 @@ a.sidebar-nav-item:focus {
 }
 
 .me {
-    color: #C33833;
+    color: #1767d6;
     font-weight: bold;
 }
 
@@ -186,10 +186,10 @@ a.sidebar-nav-item:focus {
 
 }
 
-.link a:link {color: #C33833; text-decoration: none; cursor: pointer;}
-.link a:visited {color: #C33833; text-decoration: none; cursor: pointer;}
-.link a:hover {color: #C33833; text-decoration: none; cursor: pointer;}
-.link a:active { color: #C33833; background: none; cursor: pointer;}
+.link a:link {color: #089606; text-decoration: none; cursor: pointer;}
+.link a:visited {color: #089606; text-decoration: none; cursor: pointer;}
+.link a:hover {color: #089606; text-decoration: none; cursor: pointer;}
+.link a:active { color: #089606; background: none; cursor: pointer;}
 
 /* Sticky sidebar
  *

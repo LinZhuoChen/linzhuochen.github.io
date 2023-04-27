@@ -1,4 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<style>
+    @font-face {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 400;
+        src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAUi-qNiXg7eU0.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 400;
+        src: local('Lato Italic'), local('Lato-Italic'), url(https://fonts.gstatic.com/s/lato/v15/S6u8w4BMUTPHjxsAXC-qNiXg7Q.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 700;
+        src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_FQftx9897sxZ.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: 'Lato';
+        font-style: italic;
+        font-weight: 700;
+        src: local('Lato Bold Italic'), local('Lato-BoldItalic'), url(https://fonts.gstatic.com/s/lato/v15/S6u_w4BMUTPHjxsI5wq_Gwftx9897g.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjxAwXiWtFCfQ7A.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 400;
+        src: local('Lato Regular'), local('Lato-Regular'), url(https://fonts.gstatic.com/s/lato/v15/S6uyw4BMUTPHjx4wXiWtFCc.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      /* latin-ext */
+      @font-face {
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwaPGQ3q5d0N7w.woff2) format('woff2');
+        unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+      }
+      /* latin */
+      @font-face {
+        font-family: 'Lato';
+        font-style: normal;
+        font-weight: 700;
+        src: local('Lato Bold'), local('Lato-Bold'), url(https://fonts.gstatic.com/s/lato/v15/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+      }
+      
+      a {
+        color: #1772d0;
+        text-decoration: none;
+      }
+      
+      a:focus,
+      a:hover {
+        color: #f09228;
+        text-decoration: none;
+      }
+    #project-wrapper {
+        position: relative;
+        height: 300px;
+        width: 600px;
+        overflow: hidden;
+    }
+    #project-list {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 95%;
+        width: 200%;
+        display: flex;
+        flex-wrap: nowrap;
+        transition: transform 0.3s ease-in-out;
+    }
+    .project {
+        flex: 1;
+        height: 95%;
+        margin: 0 1.5rem 1.5rem 0;
+        display: inline-block;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px;
+        border: solid 2px rgb(0, 0, 0);
+        border-radius:5px; 
+        text-align: center;
+        font-style: italic;
+        font-family: 'Lato';
+        font-size:22px;
+
+        overflow: hidden;
+        display: block;
+        position: relative;
+    }
+    .project img {
+        max-width: 100%;
+        max-height: 100%;
+        margin: auto;
+    }
+    .dot-wrapper {
+        display: flex;
+        align-items: center;
+        bottom: 0;
+        justify-content: flex-start;
+        margin-top: 20px;
+    }
+    .dot {
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        background-color: rgb(14, 68, 218);
+        margin: 0 5px;
+        cursor: pointer;
+    }
+    .dot.active {
+        background-color: rgb(60, 239, 6);
+    }
+</style>
 <html xmlns="http://www.w3.org/1999/xhtml" class="gr__yf_io">
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -10,7 +146,7 @@
         <div class="sidebar">
             <div align="center">
                 <div style="width: 200px;">
-                    <img src="profile.JPG" style="width: 100%;height:16%" />
+                    <img src="profile.JPG" style="width: 100%;height:12%" />
                     <div style="text-align: center">
                         <h3><span class="me">Lin-Zhuo Chen</span></h3>
                     </div>
@@ -21,19 +157,65 @@
             </div>
         </div>
         <div class="content">
-        <h3>About</h3>
-
-        
+        <h2>About</h2>
         <br>My name is Lin-Zhuo Chen (陈林卓), I am now a research assistant in <a href="http://www.cad.zju.edu.cn/index.html"> The CAD & CG State Key Lab  </a>, Zhejiang University, 
-        working closely with Prof.<a href="https://scholar.google.com/citations?user=FaOqRpcAAAAJ"> Hao Chen </a> and Prof.<a href="https://scholar.google.com/citations?user=Ljk2BvIAAAAJ&hl=zh-TW"> Chunhua Shen</a> .
+        working closely with Prof.<a href="https://scholar.google.com/citations?user=Ljk2BvIAAAAJ&hl=zh-TW"> Chunhua Shen</a> .
              Before that, I was a master student at Nankai University, supervised by Prof.<a href="https://mmcheng.net/cmm/"> Ming-Ming Cheng</a>. 
             My research interests include Neural Rendering and Semantic/Geometry estimation. I am looking for a phd position now.</br>
         <br>If you are interested in my research, feel free to contact me.</br>
-        <h3>Contact</h3>
+        
+        <h2>Contact</h2>
         <p><img width="20px" src="icon/email.png"/>Email: <font color="#4590a3">lin</font><font color="#008000">zhuo</font><font color="#0000FF">chen</font>@<font color="#FF0000 ">foxmail</font>.com</p>
         <p><img width="20px" src="icon/nintendo.png"/> Nintendo Friend id: <font color="#4590a3">SW-</font><font color="#008000">5377-</font><font color="#0000FF">6414-</font><font color="#FF0000 ">8504</font></p>
+        
+        <body>
+            <h2>Research Highlight</h2>
+            <div id="project-wrapper">
+                <div id="project-list">
+                    <div class="project">
+                        <a href="https://arxiv.org/abs/2004.04534" target="_blank"><img src="images/s_conv2.png" alt="Project 1"></a>
+                        <p>TIP2021: Spatial Information Guided Convolution for Real-Time RGBD Semantic Segmentation</p>
+                    </div>
+                    <div class="project">
+                        <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Lin_Interactive_Image_Segmentation_With_First_Click_Attention_CVPR_2020_paper.pdf" target="_blank"><img src="thumbnails/fclick_net.png" alt="Project 2"></a>
+                        <p>CVPR2020: Interactive Image Segmentation with First Click Attention</p>
+                    </div>
+                    <!-- <div class="project">
+                        <a href="https://project3.com" target="_blank"><img src="thumbnails/project1.gif" alt="Project 3"></a>
+                        <p>四轴飞行器自主飞行与表演</p>
+                    </div> -->
+                </div>
+            </div>
+            <div class="dot-wrapper">
+                <div class="dot active" onclick="showProject(0)"></div>
+                <div class="dot" onclick="showProject(1)"></div>
+                <!-- <div class="dot" onclick="showProject(2)"></div> -->
+            </div>
+            <script>
+                const projectList = document.getElementById('project-list');
+                const dots = document.querySelectorAll('.dot');
+                let index = 0;
+            
+                function showProject(index) {
+                    projectList.style.transform = `translateX(-${index * 50.0}%)`;
+                    dots.forEach((dot, i) => {
+                        if (i === index) {
+                            dot.classList.add('active');
+                        } else {
+                            dot.classList.remove('active');
+                        }
+                    });
+                }
+            
+                setInterval(() => {
+                    index = (index + 1) % dots.length;
+                    showProject(index);
+                }, 3000); // 每隔3秒切换一次
+            </script>
+        </body>
+
         <div id="publications">
-            <h3>Selected Publications/Project</h3>
+            <h2>Selected Publications/Project</h2>
             * denotes joint first authors.
             <table class="table pub">
                 <tbody>
@@ -55,7 +237,7 @@
                             <div class="link"><a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Lin_Interactive_Image_Segmentation_With_First_Click_Attention_CVPR_2020_paper.pdf">Paper</a> <a href="https://github.com/frazerlin/fcanet">Code</a> <a href="https://www.lin-zheng.com/fclick/">Project</a>
                         </td>
                     </tr>
-                    <!-- <tr>
+                    <tr>
                         <td width="200"><img src="thumbnails/LSA_module.png" width="200", height="120"/></td>
                         <td>
                             <div class="title">LSANet: Feature Learning on Point Sets by Local Spatial Aware Layer</div>
@@ -63,7 +245,7 @@
                             <div class="journal"><span class="journal-title">Arxiv</span>, <span class="journal-year">2019</span></div>
                             <div class="link"><a href="https://arxiv.org/pdf/1905.05442.pdf">Paper</a> <a href="https://github.com/LinZhuoChen/LSANet">Code</a>
                         </td>
-                    </tr> -->
+                    </tr>
                     <tr>
                         <td width="200"><img src="thumbnails/project1.gif" width="200", height="90"/></td>
                         <td>
@@ -88,7 +270,7 @@
             </table>
             </div>
             <div id="services">
-                <h3>Reviwers</h3>
+                <h2>Reviwers</h2>
                 <ul>
                 <li> Review for IEEE Transactions on Neural Networks and Learning Systems (TNNLS)</li>
                 <li> Review for IEEE Transactions on Image Processing (TIP) </li>
@@ -106,6 +288,7 @@
 
 
             <br>Last update: 2022-09-01.</br>
+            <br>Some code of this website is generated by chatgpt.</br>
         </div>
     </body>
     <!-- Note to anyone copying the HTML for the following counter: 
