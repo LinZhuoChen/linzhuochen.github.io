@@ -1,130 +1,483 @@
-body{
-    margin: 0;
-    border: 0;
+/* 苹果系统字体栈 */
+@font-face {
+  font-family: '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'Noto Sans', sans-serif;
 }
 
-body,
-td,
-th,
-tr,
-p,
-a {
-  font-family: 'Google Sans', sans-serif;
-}
-
-a {
-    color: #1772d0;
-    text-decoration: none;
-}
+/* 苹果风格颜色变量 */
+:root {
+  /* 苹果主色调 */
+  --apple-blue: #0071e3;
+  --apple-light-blue: #2997ff;
+  --apple-light-gray: #f5f5f7;
+  --apple-medium-gray: #86868b;
+  --apple-dark-gray: #1d1d1f;
+  --apple-dark-mode: #000000;
+  --apple-white: #ffffff;
   
-a:focus,
-a:hover {
-color: #f09228;
-text-decoration: none;
+  /* 苹果辅助色 */
+  --apple-green: #32d74b;
+  --apple-red: #ff453a;
+  --apple-yellow: #ffd60a;
+  --apple-purple: #bf5af2;
+  
+  /* 玻璃效果颜色 */
+  --glass-bg: rgba(255, 255, 255, 0.85);
+  --glass-border: rgba(226, 232, 240, 0.9);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  --glass-backdrop: blur(12px);
+  --glass-border-width: 1px;
+  
+  /* 苹果设计系统 */
+  --apple-border-radius: 12px;
+  --apple-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  --apple-transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
 }
 
-td{
-    padding: 10px;
+/* 重置默认样式 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.root-content{
-    text-align: center;
-    width: 1020px;
-    margin-right: auto;
-    margin-left: auto;
-    border-spacing: 0px;
-    border-collapse: separate;
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--apple-dark-gray);
+  background: linear-gradient(135deg, #dbeafe, #e0e7ff, #ede9fe);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  border: 0;
+  min-height: 100vh;
+  /* 添加背景模糊效果 */
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  position: relative;
+  overflow-x: hidden;
 }
 
-name {
-    font-family: 'Google Sans', sans-serif;
-    font-size: 40px;
-    font-weight: 600;
-    color: #363636;
+/* 背景装饰元素 */
+body::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));
+  z-index: -1;
+  animation: float 8s ease-in-out infinite;
 }
 
-#author-list{
-    margin-top: 10px;
-    margin-bottom: 10px;
+body::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(16, 185, 129, 0.1));
+  z-index: -1;
+  animation: float 10s ease-in-out infinite;
+}
+
+/* 添加更多装饰元素 */
+.background-shape-1 {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  background: linear-gradient(135deg, rgba(235, 100, 37, 0.1), rgba(237, 78, 235, 0.1));
+  z-index: -1;
+  animation: morph 15s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+.background-shape-2 {
+  position: absolute;
+  bottom: 30%;
+  right: 15%;
+  width: 120px;
+  height: 120px;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  background: linear-gradient(135deg, rgba(37, 235, 100, 0.1), rgba(78, 235, 237, 0.1));
+  z-index: -1;
+  animation: morph 18s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+/* 背景装饰元素 */
+body::before {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(124, 58, 237, 0.1));
+  z-index: -1;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  bottom: -80px;
+  left: -80px;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(79, 70, 229, 0.1), rgba(16, 185, 129, 0.1));
+  z-index: -1;
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* 添加动画关键帧 */
+@keyframes float {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(-20px, -20px) scale(1.05);
+  }
+  50% {
+    transform: translate(0, -30px) scale(0.95);
+  }
+  75% {
+    transform: translate(20px, -20px) scale(1.05);
+  }
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+}
+
+@keyframes morph {
+  0% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    transform: rotate(0deg) scale(1);
+  }
+  12.5% {
+    border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+    transform: rotate(45deg) scale(1.1);
+  }
+  25% {
+    border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+    transform: rotate(90deg) scale(0.9);
+  }
+  37.5% {
+    border-radius: 33% 67% 58% 42% / 63% 65% 35% 37%;
+    transform: rotate(135deg) scale(1.05);
+  }
+  50% {
+    border-radius: 45% 55% 40% 60% / 50% 40% 60% 50%;
+    transform: rotate(180deg) scale(0.95);
+  }
+  62.5% {
+    border-radius: 60% 40% 50% 50% / 45% 55% 45% 55%;
+    transform: rotate(225deg) scale(1.1);
+  }
+  75% {
+    border-radius: 33% 67% 58% 42% / 63% 65% 35% 37%;
+    transform: rotate(270deg) scale(0.9);
+  }
+  87.5% {
+    border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+    transform: rotate(315deg) scale(1.05);
+  }
+  100% {
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+/* 添加淡入淡出效果 */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+/* 在容器前添加装饰元素 */
+.container::before {
+  content: "";
+  position: fixed;
+  top: 20%;
+  left: 10%;
+  width: 80px;
+  height: 80px;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  background: linear-gradient(135deg, rgba(235, 100, 37, 0.1), rgba(237, 78, 235, 0.1));
+  z-index: -1;
+  animation: morph 15s ease-in-out infinite;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.container::after {
+  content: "";
+  position: fixed;
+  bottom: 30%;
+  right: 15%;
+  width: 120px;
+  height: 120px;
+  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  background: linear-gradient(135deg, rgba(37, 235, 100, 0.1), rgba(78, 235, 237, 0.1));
+  z-index: -1;
+  animation: morph 18s ease-in-out infinite;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* 容器 */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* 头部区域 */
+.header {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: var(--glass-border-width) solid var(--glass-border);
+  border-radius: 16px;
+  padding: 40px;
+  margin: 30px 0;
+  box-shadow: var(--glass-shadow);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 16px;
+  border: var(--glass-border-width) solid rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.name {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+  color: var(--apple-dark-gray);
+}
+
+.author-list {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 20px;
+  color: var(--apple-blue);
+}
+
+.institution-list {
+  color: var(--apple-medium-gray);
+  margin-bottom: 15px;
+  font-size: 18px;
+}
+
+.publication {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--apple-dark-gray);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+/* 按钮样式 */
+.link-button {
+  border-radius: 30px;
+  padding: 12px 24px;
+  background-color: var(--apple-blue);
+  border: none;
+  color: var(--apple-white);
+  margin: 0 10px 0 10px;
+  font-size: 17px;
+  font-weight: 500;
+  display: inline-block;
+  transition: var(--apple-transition);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link-button:hover {
+  background-color: var(--apple-light-blue);
+  transform: translateY(-2px);
+}
+
+.link-button-content {
+  color: var(--apple-white);
+}
+
+/* 章节标题 */
+.section-name {
+  color: var(--apple-dark-gray);
+  font-size: 32px;
+  font-weight: 700;
+  margin: 64px 0 32px 0;
+  letter-spacing: -0.3px;
+}
+
+/* 内容区域 */
+.section-content {
+  max-width: 750px;
+  margin: 0 auto 40px auto;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: var(--glass-border-width) solid var(--glass-border);
+  border-radius: var(--apple-border-radius);
+  padding: 32px;
+  box-shadow: var(--glass-shadow);
+  position: relative;
+  overflow: hidden;
+}
+
+.section-content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--apple-border-radius);
+  border: var(--glass-border-width) solid rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.section-content-text {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  text-align: justify;
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--apple-dark-gray);
+  margin-bottom: 20px;
+}
+
+/* 控制显示区域 */
+.control-display {
+  width: 100%;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+/* 滑块 */
+#slider {
+  width: 100%;
+  position: relative;
+  top: -25px;
+}
+
+/* 引用文献 */
+.bibtex {
+  text-align: left;
+  font-size: 16px;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Mono', monospace;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-backdrop);
+  -webkit-backdrop-filter: var(--glass-backdrop);
+  border: var(--glass-border-width) solid var(--glass-border);
+  overflow-x: auto;
+  padding: 20px;
+  border-radius: var(--apple-border-radius);
+  margin: 24px 0;
+  box-shadow: var(--glass-shadow);
+  position: relative;
+}
+
+.bibtex::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: var(--apple-border-radius);
+  border: var(--glass-border-width) solid rgba(255, 255, 255, 0.5);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+  
+  .name {
+    font-size: 36px;
+  }
+  
+  .section-name {
+    font-size: 28px;
+    margin: 48px 0 24px 0;
+  }
+  
+  .section-content {
+    padding: 24px;
+  }
+  
+  .link-button {
+    width: 90%;
+    margin: 10px auto;
+    display: block;
+  }
+  
+  .author-list {
     font-size: 18px;
-    color: #1772d0;
+  }
 }
 
-#institution-list{
-    color: #4a4a4a;
-    margin-bottom: 10px;
-}
-
-#publication{
-    font-family: 'Google Sans', sans-serif;
-    font-size: 21px;
-    font-weight: 600;
-    color: #4a4a4a;
-    margin-top: 5px;
-    margin-bottom: 15px;
-}
-
-#button-list{
-    margin: 20px 0 80px 0;
-}
-
-.link-button{
-    border-radius: 290486px;
-    padding-left: calc(1em + 0.25em);
-    padding-right: calc(1em + 0.25em);
-    background-color: #363636;
-    border-color: transparent;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    color: #fff;
-    margin: 0 5px 0 5px;
-}
-
-.link-button-content{
-    color: white;
-}
-
-svg:not(:root).svg-inline--fa{
-    overflow: visible;
-}
-
-.svg-inline--fa.fa-w-12 {
-    width: 0.75em;
-}
-
-.section-name{
-    color: #4a4a4a;
-    font-size: 35px;
-}
-
-.section-content-text{
-    font-family: 'Noto Sans', sans-serif;
-    text-align: justify;
+@media (max-width: 480px) {
+  .name {
+    font-size: 32px;
+  }
+  
+  .section-name {
+    font-size: 24px;
+  }
+  
+  .section-content {
+    padding: 20px;
+  }
+  
+  .section-content-text {
     font-size: 17px;
-    letter-spacing: 0.3px;
-}
-
-.section-content{
-    width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.control-display{
-    width: 485px;
-}
-
-#slider{
-    width: 1000px;
-    position: relative;
-    top: -25px;
-}
-
-.bibtex{
-    text-align: left;
-    font-size: 16px;
-    font-family: monospace;
-    background-color: #f5f5f5;
-    overflow-x: auto;
-    padding: 5px 15px 5px 15px;
+  }
 }
