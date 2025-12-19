@@ -1,259 +1,449 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lin-Zhuo Chen</title>
-  <meta name="author" content="Lin-Zhuo Chen">
-  <link rel="stylesheet" href="stylesheet.css">
-  <link rel="icon" type="image/png" href="images/icons/logo.png">
-</head>
-<body>
-  <!-- 背景装饰元素 -->
-  <div class="background-shape-1"></div>
-  <div class="background-shape-2"></div>
-  
-  <div class="container">
-    <!-- 头部区域 -->
-    <header class="header">
-      <div class="profile-section">
-        <div class="profile-info">
-          <h1 class="name">Lin-Zhuo Chen</h1>
-          <p class="subtitle">陈林卓</p>
-          <div class="bio-card">
-            <p class="bio">
-              I am a <span class="highlight-primary">PhD student</span> at <span class="highlight-secondary">3DV-lab, Nanjing University</span>, 
-              supervised by <span class="highlight-accent">Prof. Yao Yao</span>.
-            </p>
-            <p class="bio">
-              I am also a member of <span class="highlight-secondary">CITE lab</span>, working closely with 
-              <span class="highlight-accent">Prof. Qiu Shen</span> and <span class="highlight-accent">Prof. Xun Cao</span>.
-            </p>
-            <p class="bio">
-              Before that, I was a <span class="highlight-primary">master student</span> at <span class="highlight-secondary">Nankai University</span>, 
-              supervised by <span class="highlight-accent">Prof. Ming-Ming Cheng</span>.
-            </p>
-            <p class="bio">
-              My research interests include <span class="highlight-important">3D and motion Reconstruction</span>.
-            </p>
-            <p class="bio contact-info">
-              Constructive discussions and cooperations are always welcome. 
-              Feel free to contact me via <a href="mailto:linzhuochen@foxmail.com" class="highlight-link">email</a>.
-            </p>
-          </div>
-        </div>
-        <div class="profile-image">
-          <img src="images/photo/my.jpg" alt="Lin-Zhuo Chen">
-          <div class="nav-links">
-            <a href="https://scholar.google.com.hk/citations?user=qFgSiQEAAAAJ&hl=zh-CN&oi=ao" target="_blank" class="nav-link">
-              <i style="background: url('images/icons/google.png'); background-size: 100% 100%;"></i>
-              Google Scholar
-            </a>
-            <a href="https://github.com/LinZhuoChen" target="_blank" class="nav-link">
-              <i style="background: url('images/icons/github.png'); background-size: 100% 100%;"></i>
-              GitHub
-            </a>
-            <a href="mailto:linzhuochen@foxmail.com" target="_blank" class="nav-link">
-              <i style="background: url('images/icons/email.png'); background-size: 100% 100%;"></i>
-              Email
-            </a>
-          </div>
-        </div>
-      </div>
-    </header>
+<html>
+  <!-- * import party -->
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Lin-Zhuo Chen</title>
+    <link href="./css/style.css" rel="stylesheet" media="all" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css" rel="stylesheet"/>
+    <link rel="icon" type="image/png" href="./images/icons/logo.png">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://kit.fontawesome.com/57fb8d417e.js" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      window.onload = choosePic;
+      var myPix = new Array("./images/photo/my.jpg");
+      function choosePic() {
+        var randomNum = Math.floor(Math.random() * myPix.length);
+        document.getElementById("myPicture").src = myPix[randomNum];
+      }
+      function lastUpdate() {
+        var x = document.lastModified.substr(0, 10);
+        document.getElementById("demo").innerHTML = x;
+      }
+    </script>
+  </head>
 
-    <!-- 最新消息 -->
-    <section>
-      <h2 class="section-title">Recent News</h2>
-      <div class="card">
-        <ul class="news-list">
-          <li class="news-item">
-            <span class="news-date">01/2025</span>
-            <div class="news-content">
-              I have served as a reviewer for <span class="highlight-news">IEEE CVPR</span> and <span class="highlight-news">IEEE 3DV.</span>
+  <body onload="lastUpdate()">
+    <div class="content">
+      <div id="container">
+        <!-- * my personal link -->
+        <div class="header-section">
+          <div class="portrait-container">
+            <img
+              id="portrait"
+              src="./images/photo/my.jpg"
+              alt="Lin-Zhuo Chen"/>
+          </div>
+          <div class="info-container">
+            <h1 class="name-title">Lin-Zhuo Chen <span class="name-chinese">陈林卓</span></h1>
+            <div class="affiliation">
+              <span class="fa fa-graduation-cap"></span>
+              PhD Student at <a href="https://www.nju.edu.cn/">Nanjing University</a>
             </div>
-          </li>
-          <li class="news-item">
-            <span class="news-date">01/2025</span>
-            <div class="news-content">
-              One paper was accepted by <span class="highlight-news">ICLR 2025.</span>
+            <div class="email-link">
+              <span class="fa fa-envelope"></span>
+              <a href="mailto:linzhuochen@foxmail.com">linzhuochen@foxmail.com</a>
             </div>
-          </li>
-          <li class="news-item">
-            <span class="news-date">03/2024</span>
-            <div class="news-content">
-              We have released <a href="https://github.com/pointrix-project/pointrix">Pointrix</a>!
-            </div>
-          </li>
-          <li class="news-item">
-            <span class="news-date">09/2022</span>
-            <div class="news-content">
-              I have served as a reviewer for <span class="highlight-news">IEEE TIP</span>
-            </div>
-          </li>
-          <li class="news-item">
-            <span class="news-date">09/2022</span>
-            <div class="news-content">
-              I have served as a reviewer for <span class="highlight-news">IEEE TNNLS</span>
-            </div>
-          </li>
-          <li class="news-item">
-            <span class="news-date">01/2021</span>
-            <div class="news-content">
-              One paper was accepted by <span class="highlight-news">IEEE TIP 2021</span>
-            </div>
-          </li>
-          <li class="news-item">
-            <span class="news-date">03/2020</span>
-            <div class="news-content">
-              One paper was accepted by <span class="highlight-news">IEEE CVPR 2020</span>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- 研究亮点 -->
-    <section>
-      <h2 class="section-title">Research Highlights</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <img src="images/FDS/FDS.png" class="project-img" alt="Flow Distillation Sampling">
-          <div class="project-content">
-            <h3 class="project-title">Flow Distillation Sampling</h3>
-            <p class="project-description">[ICLR 25] Regularizing 3D Gaussians with Pre-trained Matching Priors</p>
-            <a href="https://nju-3dv.github.io/projects/fds/" target="_blank" class="btn-project">View Project</a>
+            <ul class="icon-list">
+              <a href="https://scholar.google.com.hk/citations?user=qFgSiQEAAAAJ&hl=zh-CN&oi=ao">
+                <span class="ai ai-google-scholar fa-xl"></span>
+              </a>
+              <a href="https://github.com/LinZhuoChen">
+                <span class="fa-brands fa-github fa-xl"></span>
+              </a>
+            </ul>
           </div>
         </div>
-        <div class="project-card">
-          <img src="images/Pointrix/logo.png" class="project-img" alt="Pointrix">
-          <div class="project-content">
-            <h3 class="project-title">Pointrix</h3>
-            <p class="project-description">A differentiable point-based rendering library supporting 3D Gaussian Splatting and beyond</p>
-            <a href="https://github.com/pointrix-project/pointrix" target="_blank" class="btn-project">View Project</a>
-          </div>
-        </div>
-        <div class="project-card">
-          <img src="images/SGNet/s_conv1.png" class="project-img" alt="SGNet">
-          <div class="project-content">
-            <h3 class="project-title">SG-Conv</h3>
-            <p class="project-description">Spatial Information Guided Convolution for Real-Time RGBD Semantic Segmentation</p>
-            <a href="https://github.com/LinZhuoChen/SGNet" target="_blank" class="btn-project">View Project</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 出版物 -->
-    <section>
-      <h2 class="section-title">Publications</h2>
-      <p style="margin-bottom: 24px; color: var(--medium-gray);">(* denotes equal contribution)</p>
-
-      <!-- Svid Paper -->
-      <div class="card">
-        <div class="publication">
-          <div class="publication-image">
-            <img src="images/svid/overview.png" alt="Svid">
-          </div>
-          <div class="publication-details">
-            <h3 class="paper-title">SpatialVID: A Large-Scale Video Dataset with Spatial Annotations</h3>
-            <!-- Jiahao Wang*, Yufeng Yuan*, Rujie Zheng*, Youtian Lin, Jian Gao, Lin-Zhuo Chen, Yajie Bao, Yi Zhang, Chang Zeng, Yanxi Zhou, Xiaoxiao Long, Hao Zhu, Zhaoxiang Zhang, Xun Cao, Yao Yao -->
-            <p class="authors">
-              Jiahao Wang*, Yufeng Yuan, Rujie Zheng*, Youtian Lin, Jian Gao, <span class="author-name">Lin-Zhuo Chen*</span>, Yajie Bao, Yi Zhang, Chang Zeng, Yanxi Zhou, Xiaoxiao Long, Hao Zhu, Zhaoxiang Zhang, Xun Cao, Yao Yao†
+        <!-- * my bio -->
+        <div class="biography-section">
+          <h1>Biography</h1>
+          <p class="highlight-message">
+            Constructive discussions and cooperations are always welcome.
+            Please feel free to contact me via email.
+          </p>
+          <div class="bio-content">
+            <p>
+              I am a <strong>PhD student</strong> at <a href="https://www.nju.edu.cn/">Nanjing University</a>,
+              supervised by <a href="https://yoyo000.github.io/">Prof. Yao Yao</a> in <a href="https://3dvv.github.io/">3DV-lab</a>.
+              I am also a member of <a href="https://cite.nju.edu.cn/">CITE lab</a>,
+              working closely with <a href="https://cite.nju.edu.cn/People/Faculty/20190621/i5054.html">Prof. Qiu Shen</a>
+              and <a href="https://cite.nju.edu.cn/People/Faculty/20190621/i5053.html">Prof. Xun Cao</a>.
             </p>
+            <p>
+              Before that, I was a <strong>master student</strong> at <a href="https://www.nankai.edu.cn/">Nankai University</a>,
+              supervised by <a href="https://mmcheng.net/">Prof. Ming-Ming Cheng</a>.
+            </p>
+            <p>
+              My research interests include <strong>3D and motion Reconstruction</strong>.
+            </p>
+          </div>
+        </div>
+        <!-- * my recent news -->
+        <h1>Research Highlights</h1>
+        <div class="projects-carousel">
+          <div class="carousel-container">
+            <div class="carousel-track">
+              <!-- Project Card 1 -->
+              <div class="project-card" style="--card-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                <div class="project-image">
+                  <img src="./images/FDS/FDS.png" alt="Flow Distillation Sampling">
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">Flow Distillation Sampling</h3>
+                  <p class="project-tag">ICLR 2025</p>
+                  <p class="project-description">Regularizing 3D Gaussians with Pre-trained Matching Priors</p>
+                  <a href="https://nju-3dv.github.io/projects/fds/" target="_blank" class="project-link">
+                    <span class="fa fa-arrow-right"></span> View Project
+                  </a>
+                </div>
+              </div>
 
-            <p class="venue"><span class="highlight-venue">ArXiv preprint 2505.17412</span></p>
-            <div>
-              <a href="https://arxiv.org/pdf/2509.09676" target="_blank" class="btn btn-primary">PDF</a>
-              <a href="https://nju-3dv.github.io/projects/SpatialVID/" target="_blank" class="btn btn-outline">Project</a>
-              <a href="https://github.com/NJU-3DV/spatialVID" target="_blank" class="btn btn-purple">Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- FDS Paper -->
-      <div class="card">
-        <div class="publication">
-          <div class="publication-image">
-            <img src="images/FDS/FDS.png" alt="Flow Distillation Sampling">
-          </div>
-          <div class="publication-details">
-            <h3 class="paper-title">Flow Distillation Sampling: Regularizing 3D Gaussians with Pre-trained Matching Priors</h3>
-            <p class="authors"><span class="author-name">Lin-Zhuo Chen*</span>, Kangjie Liu*, Youtian Lin, Zhihao Li, Siyu Zhu, Xun Cao, <span class="author-name">Yao Yao†</span></p>
-            <p class="venue"><span class="highlight-conf">ICLR 2025</span> <span class="highlight-venue">(Accepted)</span></p>
-            <div>
-              <a href="https://nju-3dv.github.io/projects/fds/fds.pdf" target="_blank" class="btn btn-primary">PDF</a>
-              <a href="https://nju-3dv.github.io/projects/fds/" target="_blank" class="btn btn-outline">Project</a>
-              <a href="https://github.com/NJU-3DV/fds" target="_blank" class="btn btn-purple">Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Pointrix Paper -->
-      <div class="card">
-        <div class="publication">
-          <div class="publication-image">
-            <img src="images/Pointrix/logo.png" alt="Pointrix">
-          </div>
-          <div class="publication-details">
-            <h3 class="paper-title">Pointrix: a differentiable point-based rendering library supporting 3D Gaussian Splatting and beyond</h3>
-            <p class="authors">Open Source Project</p>
-            <p class="venue"><span class="highlight-venue">Arxiv Pre-print 2024</span> <span class="highlight-venue">(WIP)</span></p>
-            <div>
-              <a href="https://github.com/pointrix-project/pointrix" target="_blank" class="btn btn-primary">PDF (Coming soon)</a>
-              <a href="https://pointrix-project.github.io/pointrix/" target="_blank" class="btn btn-outline">Document</a>
-              <a href="https://github.com/pointrix-project/pointrix" target="_blank" class="btn btn-purple">Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- SGNet Paper -->
-      <div class="card">
-        <div class="publication">
-          <div class="publication-image">
-            <img src="images/SGNet/s_conv1.png" alt="SGNet" style="height: 120px; object-fit: cover;">
-          </div>
-          <div class="publication-details">
-            <h3 class="paper-title">Spatial Information Guided Convolution for Real-Time RGBD Semantic Segmentation</h3>
-            <p class="authors"><span class="author-name">Lin-Zhuo Chen</span>, Zheng Lin, Ziqin Wang, Yong-Liang Yang, and Ming-Ming Cheng</p>
-            <p class="venue"><span class="highlight-conf">IEEE TIP, 2021</span> <span class="highlight-venue">(SCI-1, CCF-A)</span></p>
-            <div>
-              <a href="https://arxiv.org/abs/2004.04534" target="_blank" class="btn btn-primary">PDF</a>
-              <a href="https://github.com/LinZhuoChen/SGNet" target="_blank" class="btn btn-purple">Code</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      <!-- FClick Paper -->
-      <div class="card">
-        <div class="publication">
-          <div class="publication-image">
-            <img src="images/fclick/fclick_net.png" alt="FClick" style="height: 120px; object-fit: cover;">
-          </div>
-          <div class="publication-details">
-            <h3 class="paper-title">Interactive Image Segmentation with First Click Attention</h3>
-            <p class="authors">Zheng Lin, Zhao Zhang, <span class="author-name">Lin-Zhuo Chen</span>, Ming-Ming Cheng and Shao-Ping Lu</p>
-            <p class="venue"><span class="highlight-conf">IEEE CVPR, 2020</span> <span class="highlight-venue">(CCF-A)</span></p>
-            <div>
-              <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Lin_Interactive_Image_Segmentation_With_First_Click_Attention_CVPR_2020_paper.pdf" target="_blank" class="btn btn-primary">PDF</a>
-              <a href="https://github.com/frazerlin/fcanet" target="_blank" class="btn btn-purple">Code</a>
-              <a href="https://www.lin-zheng.com/fclick/" target="_blank" class="btn btn-outline">Project</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+              <!-- Project Card 2 -->
+              <div class="project-card" style="--card-color: linear-gradient(135deg, #a78bfa 0%, #ec4899 100%);">
+                <div class="project-image">
+                  <img src="./images/Pointrix/logo.png" alt="Pointrix">
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">Pointrix</h3>
+                  <p class="project-tag">Open Source</p>
+                  <p class="project-description">A differentiable point-based rendering library supporting 3D Gaussian Splatting</p>
+                  <a href="https://github.com/pointrix-project/pointrix" target="_blank" class="project-link">
+                    <span class="fa fa-arrow-right"></span> View Project
+                  </a>
+                </div>
+              </div>
 
-    <!-- 页脚 -->
-    <footer class="footer">
-      <p>
-        &copy; Lin-Zhuo Chen | Last updated: Sep 2025</a>
-      </p>
-    </footer>
-  </div>
-</body>
+              <!-- Project Card 3 -->
+              <div class="project-card" style="--card-color: linear-gradient(135deg, #10b981 0%, #14b8a6 100%);">
+                <div class="project-image">
+                  <img src="./images/SGNet/s_conv1.png" alt="SG-Conv">
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">SG-Conv</h3>
+                  <p class="project-tag">IEEE TIP 2021</p>
+                  <p class="project-description">Spatial Information Guided Convolution for Real-Time RGBD Semantic Segmentation</p>
+                  <a href="https://github.com/LinZhuoChen/SGNet" target="_blank" class="project-link">
+                    <span class="fa fa-arrow-right"></span> View Project
+                  </a>
+                </div>
+              </div>
+
+              <!-- Project Card 4 -->
+              <div class="project-card" style="--card-color: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                <div class="project-image">
+                  <img src="./images/svid/overview.png" alt="SpatialVID">
+                </div>
+                <div class="project-content">
+                  <h3 class="project-title">SpatialVID</h3>
+                  <p class="project-tag">ArXiv 2025</p>
+                  <p class="project-description">A Large-Scale Video Dataset with Spatial Annotations</p>
+                  <a href="https://nju-3dv.github.io/projects/SpatialVID/" target="_blank" class="project-link">
+                    <span class="fa fa-arrow-right"></span> View Project
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-dots"></div>
+        </div>
+
+        <h1>Publications</h1>
+        <p style="color: #64748b; margin-bottom: 15px; font-size: 13px;">
+          Representative works are
+          <span style="background: linear-gradient(90deg, #fef3c7, #fce7f3); padding: 2px 8px; border-radius: 4px; border-left: 3px solid #8b5cf6;">highlighted</span>
+          (* denotes equal contribution)
+        </p>
+
+        <table class="pub_table">
+          <tr id="svid2025">
+            <td class="pub_td1">
+              <img src="./images/svid/overview.png" alt="SpatialVID">
+            </td>
+            <td class="pub_td2">
+              <strong class="paper-title">SpatialVID: A Large-Scale Video Dataset with Spatial Annotations</strong>
+              <div class="authors">
+                Jiahao Wang*, Yufeng Yuan*, Rujie Zheng*, Youtian Lin, Jian Gao, <u>Lin-Zhuo Chen</u>, Yajie Bao, Yi Zhang, Chang Zeng, Yanxi Zhou, Xiaoxiao Long, Hao Zhu, Zhaoxiang Zhang, Xun Cao, Yao Yao†
+              </div>
+              <div class="venue">
+                ArXiv preprint 2505.17412
+              </div>
+              <div class="links">
+                <a class="box" href="https://arxiv.org/pdf/2509.09676">
+                  <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>
+                  PDF&nbsp;
+                </a>
+                <a class="box" href="https://nju-3dv.github.io/projects/SpatialVID/">
+                  <i class="fas fa-home" aria-hidden="true">&nbsp;</i>
+                  Project&nbsp;
+                </a>
+                <a class="box" href="https://github.com/NJU-3DV/spatialVID">
+                  <i class="fa fa-github" aria-hidden="true">&nbsp;</i>
+                  Code&nbsp;
+                </a>
+              </div>
+            </td>
+          </tr>
+
+          <tr id="heft2025">
+            <td class="pub_td1">
+              <img src="./images/heft/teaser.jpg" alt="HeFT">
+            </td>
+            <td class="pub_td2">
+              <strong class="paper-title">Denoise to Track: Harnessing Video Diffusion Priors for Robust Correspondence</strong>
+              <div class="authors">
+                Tianyu Yuan, Yuanbo Yang, <u>Lin-Zhuo Chen</u>, Yao Yao†, Zhuzhong Qian†
+              </div>
+              <div class="venue">
+                ArXiv preprint 2512.04619
+              </div>
+              <div class="links">
+                <a class="box" href="https://arxiv.org/abs/2512.04619">
+                  <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>
+                  PDF&nbsp;
+                </a>
+                <a class="box" href="https://yuantianyu177.github.io/heft_page/">
+                  <i class="fas fa-home" aria-hidden="true">&nbsp;</i>
+                  Project&nbsp;
+                </a>
+                <a class="box" href="https://github.com/yuantianyu177/heft">
+                  <i class="fa fa-github" aria-hidden="true">&nbsp;</i>
+                  Code&nbsp;
+                </a>
+              </div>
+            </td>
+          </tr>
+
+          <tr id="fds2025" class="focus">
+            <td class="pub_td1">
+              <img src="./images/FDS/FDS.png" alt="Flow Distillation Sampling">
+            </td>
+            <td class="pub_td2">
+              <strong class="paper-title">Flow Distillation Sampling: Regularizing 3D Gaussians with Pre-trained Matching Priors</strong>
+              <div class="authors">
+                <u>Lin-Zhuo Chen*</u>, Kangjie Liu*, Youtian Lin, Zhihao Li, Siyu Zhu, Xun Cao, Yao Yao†
+              </div>
+              <div class="venue">
+                ICLR 2025, <strong style="color: brown">Accepted</strong>
+              </div>
+              <div class="links">
+                <a class="box" href="https://nju-3dv.github.io/projects/fds/fds.pdf">
+                  <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>
+                  PDF&nbsp;
+                </a>
+                <a class="box" href="https://nju-3dv.github.io/projects/fds/">
+                  <i class="fas fa-home" aria-hidden="true">&nbsp;</i>
+                  Project&nbsp;
+                </a>
+                <a class="box" href="https://github.com/NJU-3DV/fds">
+                  <i class="fa fa-github" aria-hidden="true">&nbsp;</i>
+                  Code
+                </a>
+              </div>
+              <div class="description">
+                We propose Flow Distillation Sampling to regularize 3D Gaussians with pre-trained matching priors, improving reconstruction quality.
+              </div>
+            </td>
+          </tr>
+
+          <tr id="pointrix2024">
+            <td class="pub_td1">
+              <img src="./images/Pointrix/logo.png" alt="Pointrix">
+            </td>
+            <td class="pub_td2">
+              <strong class="paper-title">Pointrix: A differentiable point-based rendering library supporting 3D Gaussian Splatting and beyond</strong>
+              <div class="authors">
+                Open Source Project
+              </div>
+              <div class="venue">
+                Arxiv Pre-print 2024 (WIP)
+              </div>
+              <div class="links">
+                <a class="box" href="https://github.com/pointrix-project/pointrix">
+                  <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>
+                  PDF (Coming soon)&nbsp;
+                </a>
+                <a class="box" href="https://pointrix-project.github.io/pointrix/">
+                  <i class="fas fa-home" aria-hidden="true">&nbsp;</i>
+                  Document&nbsp;
+                </a>
+                <a class="box" href="https://github.com/pointrix-project/pointrix">
+                  <i class="fa fa-github" aria-hidden="true">&nbsp;</i>
+                  Code
+                </a>
+              </div>
+              <div class="description">
+                A differentiable point-based rendering library supporting 3D Gaussian Splatting and beyond.
+              </div>
+            </td>
+          </tr>
+
+          <tr id="sgnet2021" class="focus">
+            <td class="pub_td1">
+              <img src="./images/SGNet/s_conv1.png" alt="SGNet">
+            </td>
+            <td class="pub_td2">
+              <strong class="paper-title">Spatial Information Guided Convolution for Real-Time RGBD Semantic Segmentation</strong>
+              <div class="authors">
+                <u>Lin-Zhuo Chen</u>, Zheng Lin, Ziqin Wang, Yong-Liang Yang, Ming-Ming Cheng
+              </div>
+              <div class="venue">
+                IEEE TIP, 2021, <strong style="color: brown">SCI-1, CCF-A</strong>
+              </div>
+              <div class="links">
+                <a class="box" href="https://arxiv.org/abs/2004.04534">
+                  <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>
+                  PDF&nbsp;
+                </a>
+                <a class="box" href="https://github.com/LinZhuoChen/SGNet">
+                  <i class="fa fa-github" aria-hidden="true">&nbsp;</i>
+                  Code
+                </a>
+              </div>
+              <div class="description">
+                We propose spatial information guided convolution for real-time RGBD semantic segmentation.
+              </div>
+            </td>
+          </tr>
+
+          <tr id="fclick2020">
+            <td class="pub_td1">
+              <img src="./images/fclick/fclick_net.png" alt="FClick">
+            </td>
+            <td class="pub_td2">
+              <strong class="paper-title">Interactive Image Segmentation with First Click Attention</strong>
+              <div class="authors">
+                Zheng Lin, Zhao Zhang, <u>Lin-Zhuo Chen</u>, Ming-Ming Cheng, Shao-Ping Lu
+              </div>
+              <div class="venue">
+                IEEE CVPR, 2020, <strong style="color: brown">CCF-A</strong>
+              </div>
+              <div class="links">
+                <a class="box" href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Lin_Interactive_Image_Segmentation_With_First_Click_Attention_CVPR_2020_paper.pdf">
+                  <i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>
+                  PDF&nbsp;
+                </a>
+                <a class="box" href="https://www.lin-zheng.com/fclick/">
+                  <i class="fas fa-home" aria-hidden="true">&nbsp;</i>
+                  Project&nbsp;
+                </a>
+                <a class="box" href="https://github.com/frazerlin/fcanet">
+                  <i class="fa fa-github" aria-hidden="true">&nbsp;</i>
+                  Code
+                </a>
+              </div>
+              <div class="description">
+                Interactive image segmentation with first click attention mechanism for improved user interaction.
+              </div>
+            </td>
+          </tr>
+
+        </table>
+
+        <!-- * update time -->
+        <div align="center">
+          <strong>
+            <p style="text-align: center; margin-bottom: 0px; font-size: smaller;">
+              &copy; Lin-Zhuo Chen | Last updated: <span id="demo"></span>
+            </p>
+          </strong>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Carousel Script -->
+    <script>
+      // Carousel functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const track = document.querySelector('.carousel-track');
+        const dotsContainer = document.querySelector('.carousel-dots');
+        const cards = document.querySelectorAll('.project-card');
+
+        if (!track || !dotsContainer || cards.length === 0) return;
+
+        let currentIndex = 0;
+        const totalCards = cards.length;
+        let autoplayInterval;
+
+        // Create dots
+        for (let i = 0; i < totalCards; i++) {
+          const dot = document.createElement('div');
+          dot.className = 'carousel-dot';
+          if (i === 0) dot.classList.add('active');
+          dot.addEventListener('click', () => goToSlide(i));
+          dotsContainer.appendChild(dot);
+        }
+
+        const dots = document.querySelectorAll('.carousel-dot');
+
+        function updateCarousel() {
+          track.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+          // Update dots
+          dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+          });
+        }
+
+        function goToSlide(index) {
+          currentIndex = index;
+          updateCarousel();
+          resetAutoplay();
+        }
+
+        function nextSlide() {
+          currentIndex = (currentIndex + 1) % totalCards;
+          updateCarousel();
+        }
+
+        function prevSlide() {
+          currentIndex = (currentIndex - 1 + totalCards) % totalCards;
+          updateCarousel();
+        }
+
+        function startAutoplay() {
+          autoplayInterval = setInterval(nextSlide, 4000); // 每4秒切换
+        }
+
+        function stopAutoplay() {
+          clearInterval(autoplayInterval);
+        }
+
+        function resetAutoplay() {
+          stopAutoplay();
+          startAutoplay();
+        }
+
+        // 鼠标悬停时暂停自动播放
+        const carousel = document.querySelector('.projects-carousel');
+        carousel.addEventListener('mouseenter', stopAutoplay);
+        carousel.addEventListener('mouseleave', startAutoplay);
+
+        // 触摸滑动支持
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        carousel.addEventListener('touchstart', (e) => {
+          touchStartX = e.changedTouches[0].screenX;
+          stopAutoplay();
+        });
+
+        carousel.addEventListener('touchend', (e) => {
+          touchEndX = e.changedTouches[0].screenX;
+          handleSwipe();
+          startAutoplay();
+        });
+
+        function handleSwipe() {
+          if (touchEndX < touchStartX - 50) {
+            nextSlide();
+          }
+          if (touchEndX > touchStartX + 50) {
+            prevSlide();
+          }
+        }
+
+        // 启动自动播放
+        startAutoplay();
+      });
+    </script>
+  </body>
 </html>
