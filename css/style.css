@@ -1,60 +1,38 @@
 /* ============================================
-   Font Faces - Garamond
+   Font — EB Garamond (Google Fonts):
+   a refined classic serif used throughout
+   for headings, body, and UI alike.
    ============================================ */
-@font-face {
-  font-family: "Garamond";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Garamond"), url("font/Garamond.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Garamond Italic";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Garamond Italic"), url("font/Garamond_Italic.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Garamond Medium";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Garamond Medium"), url("font/Garamond Medium.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Garamond Bold";
-  font-style: normal;
-  font-weight: normal;
-  src: local("Garamond Bold"), url("font/Garamond_B.woff") format("woff");
-}
 
 /* ============================================
    CSS Variables - Design System
    ============================================ */
 :root {
-  /* Primary — deep ink navy (学术期刊装帧色) */
-  --color-primary: #1e3a5f;
-  --color-primary-hover: #2a4f7a;
-  /* Accent — warm gold (主暖点缀) */
-  --color-accent: #b08d57;
-  --color-accent-subtle: rgba(176, 141, 87, 0.08);
-  /* Sage — muted forest green (辅助冷色，用于积极/欢迎语义) */
-  --color-sage: #5d7a6b;
-  --color-sage-hover: #6f8c7d;
-  --color-sage-subtle: rgba(93, 122, 107, 0.1);
-  /* Burgundy — muted wine red (重点强调，用于 focus 论文) */
-  --color-burgundy: #8b4a4a;
-  --color-burgundy-hover: #a05858;
-  --color-burgundy-subtle: rgba(139, 74, 74, 0.07);
-  /* Text — warm gray hierarchy */
-  --color-text-primary: #1a1a2e;
-  --color-text-secondary: #4a4a5a;
+  /* Typography — EB Garamond throughout (full serif; both roles share it) */
+  --font-sans: "EB Garamond", Georgia, "Times New Roman", "Songti SC", serif;
+  --font-display: "EB Garamond", Georgia, "Times New Roman", "Songti SC", serif;
+  /* Primary — slate blue (cool, softer than Apple blue) */
+  --color-primary: #3b5b7f;
+  --color-primary-hover: #496e96;
+  /* Accent — same slate blue (single accent, no second hue) */
+  --color-accent: #3b5b7f;
+  --color-accent-subtle: rgba(59, 91, 127, 0.08);
+  /* Sage slot — cool neutral gray (passive labels / welcome) */
+  --color-sage: #5f6675;
+  --color-sage-hover: #727a8b;
+  --color-sage-subtle: rgba(95, 102, 117, 0.10);
+  /* Burgundy slot — slate blue (focus papers share the one accent) */
+  --color-burgundy: #3b5b7f;
+  --color-burgundy-hover: #496e96;
+  --color-burgundy-subtle: rgba(59, 91, 127, 0.06);
+  /* Text — cool ink hierarchy (冷墨 → 冷灰) */
+  --color-text-primary: #1a1d24;
+  --color-text-secondary: #3f4654;
   --color-text-muted: #6b7280;
-  /* Backgrounds */
-  --color-border: #e5e5e5;
+  /* Backgrounds — cool white */
+  --color-border: #e3e5ea;
   --color-background: #ffffff;
-  --color-background-subtle: #f9f9f7;  /* warm off-white */
+  --color-background-subtle: #f4f5f7;  /* cool gray-white */
 
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -74,22 +52,22 @@
 
 /* Dark mode variables */
 [data-theme="dark"] {
-  --color-primary: #6b9fd4;
-  --color-primary-hover: #8bb5e0;
-  --color-accent: #d4a960;
-  --color-accent-subtle: rgba(212, 169, 96, 0.1);
-  --color-sage: #92b3a3;
-  --color-sage-hover: #a8c4b6;
-  --color-sage-subtle: rgba(146, 179, 163, 0.12);
-  --color-burgundy: #c98080;
-  --color-burgundy-hover: #d99595;
-  --color-burgundy-subtle: rgba(201, 128, 128, 0.1);
-  --color-text-primary: #f0ece4;
-  --color-text-secondary: #d1cdc5;
-  --color-text-muted: #9a968e;
-  --color-border: #333330;
-  --color-background: #1a1a18;
-  --color-background-subtle: #242422;
+  --color-primary: #7aa6d6;
+  --color-primary-hover: #9bbde2;
+  --color-accent: #7aa6d6;
+  --color-accent-subtle: rgba(122, 166, 214, 0.14);
+  --color-sage: #8b909c;
+  --color-sage-hover: #a3a8b3;
+  --color-sage-subtle: rgba(139, 144, 156, 0.14);
+  --color-burgundy: #7aa6d6;
+  --color-burgundy-hover: #9bbde2;
+  --color-burgundy-subtle: rgba(122, 166, 214, 0.12);
+  --color-text-primary: #eef0f4;
+  --color-text-secondary: #c4c8d2;
+  --color-text-muted: #8b909c;
+  --color-border: #2f323a;
+  --color-background: #15171c;
+  --color-background-subtle: #1d2027;
 }
 
 /* ============================================
@@ -109,12 +87,12 @@ html {
 
 /* Custom text selection */
 ::selection {
-  background: rgba(30, 58, 95, 0.12);
+  background: rgba(59, 91, 127, 0.15);
   color: var(--color-text-primary);
 }
 
 [data-theme="dark"] ::selection {
-  background: rgba(107, 159, 212, 0.3);
+  background: rgba(122, 166, 214, 0.34);
 }
 
 /* Custom scrollbar (Webkit) */
@@ -127,16 +105,16 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #cbd5e0;
+  background: #cbd0d8;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1e3a5f;
+  background: #3b5b7f;
 }
 
 [data-theme="dark"] ::-webkit-scrollbar-thumb {
-  background: #4a5568;
+  background: #3a3e47;
 }
 
 /* Scroll Reveal Animation */
@@ -155,15 +133,18 @@ html {
    Reset and Base Styles
    ============================================ */
 body {
-  font-family: "Garamond", -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 16px;
-  line-height: 1.65;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.6;
+  letter-spacing: normal;
   color: var(--color-text-primary);
   background: var(--color-background);
   min-height: 100vh;
   margin: 0;
   padding: 0;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: "ss03";
   transition: background-color var(--transition-base), color var(--transition-base);
 }
 
@@ -179,7 +160,7 @@ body {
   padding: 14px 0;
   box-shadow: var(--shadow-sm);
   backdrop-filter: blur(8px);
-  background-color: rgba(255, 255, 255, 0.95);
+  background-color: rgba(255, 255, 255, 0.9);
   transition: all var(--transition-base);
 }
 
@@ -191,11 +172,11 @@ body {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, #1e3a5f 0%, #2a4f7a 25%, #5d7a6b 55%, #b08d57 85%, #8b4a4a 100%);
+  background: var(--color-accent);
 }
 
 [data-theme="dark"] .top-nav {
-  background-color: rgba(26, 26, 24, 0.95);
+  background-color: rgba(21, 23, 28, 0.9);
 }
 
 .nav-container {
@@ -208,7 +189,7 @@ body {
 }
 
 .nav-brand {
-  font-family: "Garamond Bold";
+  font-family: var(--font-display);
   font-size: 18px;
   font-weight: 600;
   color: var(--color-text-primary);
@@ -232,7 +213,7 @@ body {
 .nav-menu a {
   color: var(--color-text-secondary);
   font-size: 15px;
-  font-weight: 500;
+  font-weight: 400;
   padding: 6px 0;
   display: block;
   position: relative;
@@ -286,8 +267,8 @@ body {
 .content {
   width: 1060px;
   max-width: 94%;
-  padding: 40px 48px;
-  margin: 24px auto;
+  padding: 28px 48px;
+  margin: 16px auto;
   background: var(--color-background);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-sm);
@@ -305,10 +286,10 @@ div#container {
    ============================================ */
 .header-section {
   display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 40px;
-  padding: 16px 0 44px 0;
-  margin-bottom: 16px;
+  grid-template-columns: 160px 1fr;
+  gap: 36px;
+  padding: 10px 0 28px 0;
+  margin-bottom: 10px;
   position: relative;
   align-items: start;
 }
@@ -329,10 +310,11 @@ div#container {
 }
 
 #portrait {
-  width: 180px;
-  height: 180px;
+  width: 160px;
+  height: 160px;
   border-radius: var(--radius-lg);
   object-fit: cover;
+  object-position: center 55%;
   box-shadow: var(--shadow-lg);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
@@ -360,9 +342,10 @@ div#container {
 }
 
 .name-title {
-  font-size: 42px;
-  font-weight: 700;
-  margin: 0 0 14px 0;
+  font-family: var(--font-display);
+  font-size: 37px;
+  font-weight: 600;
+  margin: 0 0 10px 0;
   padding: 0;
   border: none;
   color: var(--color-text-primary);
@@ -371,10 +354,10 @@ div#container {
 }
 
 .name-chinese {
-  font-size: 26px;
+  font-size: 23px;
   color: var(--color-text-secondary);
   margin-left: 10px;
-  font-weight: 500;
+  font-weight: 400;
   letter-spacing: 0.02em;
 }
 
@@ -383,9 +366,9 @@ div#container {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-size: 16px;
+  font-size: 16.5px;
   color: var(--color-text-secondary);
-  margin-bottom: 8px;
+  margin-bottom: 7px;
 }
 
 .affiliation .fa,
@@ -397,7 +380,7 @@ div#container {
 .affiliation a,
 .email-link a {
   color: var(--color-primary);
-  font-weight: 500;
+  font-weight: 400;
   text-decoration: none;
 }
 
@@ -424,7 +407,7 @@ div#container {
 
 .interests-heading {
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0 0 12px 0;
   color: var(--color-accent);
   text-transform: uppercase;
@@ -438,12 +421,12 @@ div#container {
 }
 
 .interests-list li {
-  margin-bottom: 8px;
-  font-size: 16px;
+  margin-bottom: 7px;
+  font-size: 16.5px;
   color: var(--color-text-primary);
   padding-left: 18px;
   position: relative;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.4;
 }
 
@@ -498,14 +481,15 @@ ul.icon-list > a:hover span {
    Typography
    ============================================ */
 h1, h2, h3, h4 {
-  font-family: "Garamond Bold";
+  font-family: var(--font-display);
+  font-weight: 600;
   color: var(--color-text-primary);
-  margin-top: 64px;
-  margin-bottom: 24px;
+  margin-top: 42px;
+  margin-bottom: 18px;
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 28px;
   position: relative;
   letter-spacing: -0.015em;
   display: inline-block;
@@ -535,27 +519,27 @@ h1:first-child {
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 23px;
 }
 
 b, strong {
-  font-family: "Garamond Bold";
+  font-family: var(--font-sans);
   color: var(--color-text-primary);
-  font-weight: bold;
+  font-weight: 600;
 }
 
 p {
   color: var(--color-text-secondary);
   margin-bottom: 10px;
-  line-height: 1.75;
-  font-size: 16px;
+  line-height: 1.65;
+  font-size: 17px;
 }
 
 /* ============================================
    Links
    ============================================ */
 a {
-  font-family: "Garamond Medium";
+  font-family: var(--font-sans);
   text-decoration: none;
   transition: color var(--transition-fast);
   position: relative;
@@ -580,20 +564,20 @@ a:hover {
 .highlight-message {
   background: var(--color-sage-subtle);
   color: var(--color-text-secondary);
-  font-weight: 500;
-  font-size: 15px;
+  font-weight: 400;
+  font-size: 16px;
   font-style: italic;
-  margin: 12px 0;
-  padding: 16px 20px;
+  margin: 10px 0;
+  padding: 12px 18px;
   border-radius: var(--radius-md);
   border-left: 4px solid var(--color-sage);
 }
 
 .bio-content p {
-  margin-bottom: 10px;
-  line-height: 1.75;
+  margin-bottom: 9px;
+  line-height: 1.65;
   text-align: justify;
-  font-size: 16px;
+  font-size: 17px;
 }
 
 .bio-content p:last-child {
@@ -725,16 +709,17 @@ a:hover {
 }
 
 .pub-title {
-  font-family: "Garamond Bold";
-  font-size: 18px;
-  font-weight: 700;
-  margin-bottom: 8px;
+  font-family: var(--font-display);
+  letter-spacing: -0.014em;
+  font-size: 18.5px;
+  font-weight: 600;
+  margin-bottom: 7px;
   line-height: 1.4;
   color: var(--color-text-primary);
 }
 
 .pub-authors {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--color-text-secondary);
   margin-bottom: 6px;
   line-height: 1.6;
@@ -748,7 +733,7 @@ a:hover {
 }
 
 .pub-venue {
-  font-size: 15px;
+  font-size: 16px;
   font-style: italic;
   color: var(--color-text-muted);
   margin-bottom: 8px;
@@ -765,18 +750,18 @@ a:hover {
 
 .pub-links a {
   color: var(--color-primary);
-  font-weight: 500;
+  font-weight: 400;
   padding: 4px 10px;
   border-radius: var(--radius-sm);
-  background: rgba(30, 58, 95, 0.06);
-  border: 1px solid rgba(30, 58, 95, 0.12);
+  background: rgba(59, 91, 127, 0.06);
+  border: 1px solid rgba(59, 91, 127, 0.12);
   text-decoration: none;
   transition: all var(--transition-fast);
   font-size: 14px;
 }
 
 .pub-links a:hover {
-  background: rgba(30, 58, 95, 0.12);
+  background: rgba(59, 91, 127, 0.12);
   transform: translateY(-1px);
 }
 
@@ -805,12 +790,12 @@ a:hover {
 }
 
 .pub-links .gh-stars-label {
-  font-weight: 500;
+  font-weight: 400;
   opacity: 0.85;
 }
 
 .pub-description {
-  font-size: 14px;
+  font-size: 16px;
   color: var(--color-text-secondary);
   line-height: 1.6;
   margin-top: 8px;
@@ -889,11 +874,12 @@ a:hover {
 }
 
 .project-title {
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 18.5px;
+  font-weight: 600;
+  letter-spacing: -0.014em;
   margin: 0 0 8px 0;
   color: var(--color-text-primary);
-  font-family: "Garamond Bold";
+  font-family: var(--font-display);
 }
 
 .project-tag {
@@ -904,16 +890,16 @@ a:hover {
   font-weight: 600;
   letter-spacing: 0.04em;
   margin-bottom: 8px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-sage));
+  background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
   color: white;
   width: fit-content;
-  box-shadow: 0 1px 2px rgba(30, 58, 95, 0.2);
+  box-shadow: 0 1px 2px rgba(59, 91, 127, 0.2);
 }
 
 .project-description {
-  font-size: 15px;
+  font-size: 16px;
   color: var(--color-text-secondary);
-  line-height: 1.6;
+  line-height: 1.55;
   margin: 0 0 12px 0;
   flex: 1;
 }
@@ -926,8 +912,8 @@ a:hover {
   border-radius: var(--radius-sm);
   font-size: 14px;
   font-weight: 600;
-  background: rgba(30, 58, 95, 0.06);
-  border: 1px solid rgba(30, 58, 95, 0.12);
+  background: rgba(59, 91, 127, 0.06);
+  border: 1px solid rgba(59, 91, 127, 0.12);
   color: var(--color-primary) !important;
   text-decoration: none;
   width: fit-content;
@@ -935,7 +921,7 @@ a:hover {
 }
 
 .project-link:hover {
-  background: rgba(30, 58, 95, 0.12);
+  background: rgba(59, 91, 127, 0.12);
   transform: translateY(-1px);
 }
 
@@ -1227,9 +1213,9 @@ div[align="center"] {
 }
 
 .office-hours__label {
-  font-family: "Garamond Bold";
+  font-family: var(--font-sans);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--color-sage);
@@ -1238,7 +1224,7 @@ div[align="center"] {
 
 .office-hours__title {
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 600;
   margin: 0 0 6px 0;
   color: var(--color-text-primary);
 }
@@ -1252,7 +1238,7 @@ div[align="center"] {
 
 .office-hours__body a {
   color: var(--color-sage);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .office-hours__body a:hover {
@@ -1303,18 +1289,18 @@ div[align="center"] {
 }
 
 .news-date {
-  font-family: "Garamond Medium";
+  font-family: var(--font-sans);
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   color: var(--color-text-muted);
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
 
 .news-tag {
-  font-family: "Garamond Bold";
+  font-family: var(--font-sans);
   font-size: 10.5px;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 4px 10px;
@@ -1329,10 +1315,10 @@ div[align="center"] {
 
 .news-tag--paper     { background: var(--color-accent-subtle);    color: var(--color-accent); }
 .news-tag--role      { background: var(--color-sage-subtle);      color: var(--color-sage); }
-.news-tag--event     { background: rgba(30,58,95,0.08);           color: var(--color-primary); }
+.news-tag--event     { background: rgba(59,91,127,0.08);           color: var(--color-primary); }
 .news-tag--talk      { background: var(--color-burgundy-subtle);  color: var(--color-burgundy); }
 .news-tag--press     { background: var(--color-burgundy-subtle);  color: var(--color-burgundy); }
-.news-tag--milestone { background: rgba(30,58,95,0.08);           color: var(--color-primary); }
+.news-tag--milestone { background: rgba(59,91,127,0.08);           color: var(--color-primary); }
 .news-tag--release   { background: var(--color-sage-subtle);      color: var(--color-sage); }
 
 .news-body {
@@ -1343,7 +1329,7 @@ div[align="center"] {
 
 .news-body a {
   color: var(--color-primary);
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .news-body a:hover {
@@ -1354,7 +1340,7 @@ div[align="center"] {
   background: none;
   border: 1px solid var(--color-border);
   color: var(--color-text-secondary);
-  font-family: "Garamond Medium";
+  font-family: var(--font-sans);
   font-size: 14px;
   cursor: pointer;
   display: inline-flex;
@@ -1463,16 +1449,16 @@ div[align="center"] {
 }
 
 .post-card__date {
-  font-family: "Garamond Medium";
+  font-family: var(--font-sans);
   font-size: 12px;
   color: var(--color-text-muted);
   letter-spacing: 0.02em;
 }
 
 .post-card__tag {
-  font-family: "Garamond Bold";
+  font-family: var(--font-sans);
   font-size: 10.5px;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 3px 9px;
@@ -1480,14 +1466,15 @@ div[align="center"] {
   line-height: 1;
 }
 
-.post-card__tag--meta       { background: rgba(30,58,95,0.08);          color: var(--color-primary); }
+.post-card__tag--meta       { background: rgba(59,91,127,0.08);          color: var(--color-primary); }
 .post-card__tag--research   { background: var(--color-accent-subtle);   color: var(--color-accent); }
 .post-card__tag--reading    { background: var(--color-sage-subtle);     color: var(--color-sage); }
 .post-card__tag--tools      { background: var(--color-burgundy-subtle); color: var(--color-burgundy); }
 .post-card__tag--reflection { background: var(--color-sage-subtle);     color: var(--color-sage); }
 
 .post-card__title {
-  font-family: "Garamond Bold";
+  font-family: var(--font-display);
+  font-weight: 600;
   font-size: 19px;
   line-height: 1.3;
   margin: 0 0 8px 0;
@@ -1504,10 +1491,10 @@ div[align="center"] {
 }
 
 .post-card__read {
-  font-family: "Garamond Medium";
+  font-family: var(--font-sans);
   font-size: 14px;
   color: var(--color-primary);
-  font-weight: 500;
+  font-weight: 400;
   display: inline-flex;
   align-items: center;
   gap: 4px;
@@ -1531,7 +1518,7 @@ div[align="center"] {
 .post-back {
   display: inline-flex;
   align-items: center;
-  font-family: "Garamond Medium";
+  font-family: var(--font-sans);
   font-size: 14px;
   color: var(--color-text-secondary);
   margin: 0 0 24px 0;
@@ -1564,33 +1551,34 @@ div[align="center"] {
 }
 
 .post-date {
-  font-family: "Garamond Medium";
+  font-family: var(--font-sans);
   font-size: 14px;
   color: var(--color-text-muted);
   letter-spacing: 0.02em;
 }
 
 .post-tag {
-  font-family: "Garamond Bold";
+  font-family: var(--font-sans);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   padding: 4px 10px;
   border-radius: var(--radius-sm);
   line-height: 1;
-  background: rgba(30,58,95,0.08);
+  background: rgba(59,91,127,0.08);
   color: var(--color-primary);
 }
 
-.post-tag--meta       { background: rgba(30,58,95,0.08);          color: var(--color-primary); }
+.post-tag--meta       { background: rgba(59,91,127,0.08);          color: var(--color-primary); }
 .post-tag--research   { background: var(--color-accent-subtle);   color: var(--color-accent); }
 .post-tag--reading    { background: var(--color-sage-subtle);     color: var(--color-sage); }
 .post-tag--tools      { background: var(--color-burgundy-subtle); color: var(--color-burgundy); }
 .post-tag--reflection { background: var(--color-sage-subtle);     color: var(--color-sage); }
 
 .post-title {
-  font-family: "Garamond Bold";
+  font-family: var(--font-display);
+  font-weight: 600;
   font-size: 36px;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -1617,7 +1605,8 @@ div[align="center"] {
 }
 
 .post-body h2 {
-  font-family: "Garamond Bold";
+  font-family: var(--font-display);
+  font-weight: 600;
   font-size: 24px;
   line-height: 1.3;
   margin: 48px 0 16px 0;
@@ -1626,7 +1615,8 @@ div[align="center"] {
 }
 
 .post-body h3 {
-  font-family: "Garamond Bold";
+  font-family: var(--font-display);
+  font-weight: 600;
   font-size: 20px;
   line-height: 1.35;
   margin: 36px 0 12px 0;
@@ -1653,7 +1643,7 @@ div[align="center"] {
 
 .post-body a {
   color: var(--color-primary);
-  border-bottom: 1px solid rgba(30, 58, 95, 0.25);
+  border-bottom: 1px solid rgba(59, 91, 127, 0.25);
   transition: border-color var(--transition-fast), color var(--transition-fast);
 }
 
@@ -1663,13 +1653,14 @@ div[align="center"] {
 }
 
 .post-body strong {
-  font-family: "Garamond Bold";
+  font-family: var(--font-sans);
+  font-weight: 600;
   color: var(--color-text-primary);
 }
 
 .post-body em {
-  font-family: "Garamond Italic";
-  font-style: normal;
+  font-family: var(--font-sans);
+  font-style: italic;
 }
 
 .post-body blockquote {
