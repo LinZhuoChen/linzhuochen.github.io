@@ -779,6 +779,17 @@ a:hover {
   outline-offset: 2px;
 }
 
+.pub-versions {
+  margin-bottom: 10px;
+}
+
+.pub-versions button[aria-pressed="true"] {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-background);
+  font-weight: 600;
+}
+
 .pub-links button:disabled {
   cursor: default;
 }
