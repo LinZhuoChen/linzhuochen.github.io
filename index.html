@@ -6,7 +6,7 @@
     <title>Lin-Zhuo Chen</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Inter:wght@400;500;600&family=Noto+Serif+SC:wght@500;600&display=swap" rel="stylesheet">
     <link href="./css/style.css" rel="stylesheet" media="all" type="text/css"/>
     <link href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css" rel="stylesheet"/>
     <link rel="icon" type="image/png" href="./images/icons/logo.png">
@@ -49,9 +49,8 @@
               alt="Lin-Zhuo Chen"/>
           </div>
           <div class="about-info">
-            <!-- Left column: Basic info -->
-            <div class="info-column">
-              <h1 class="name-title">Lin-Zhuo Chen <span class="name-chinese">陈林卓</span></h1>
+            <h1 class="name-title">Lin-Zhuo Chen <span class="name-chinese">陈林卓</span></h1>
+            <div class="meta-row">
               <div class="affiliation">
                 <span class="fa fa-graduation-cap"></span>
                 PhD Candidate at <a href="https://www.nju.edu.cn/">Nanjing University</a>
@@ -61,17 +60,32 @@
                 <a href="mailto:linzhuochen@foxmail.com">linzhuochen@foxmail.com</a>
               </div>
               <ul class="icon-list">
-                <a href="https://scholar.google.com.hk/citations?user=qFgSiQEAAAAJ&hl=zh-CN&oi=ao">
+                <a href="https://scholar.google.com.hk/citations?user=qFgSiQEAAAAJ&hl=zh-CN&oi=ao" aria-label="Google Scholar">
                   <span class="ai ai-google-scholar fa-xl"></span>
                 </a>
-                <a href="https://github.com/LinZhuoChen">
+                <a href="https://github.com/LinZhuoChen" aria-label="GitHub">
                   <span class="fa-brands fa-github fa-xl"></span>
                 </a>
               </ul>
             </div>
-            <!-- Right column: Research Interests -->
-            <div class="info-column">
-              <h3 class="interests-heading">Research Interests</h3>
+            <!-- * my bio -->
+            <div class="bio-content">
+              <p>
+                I am a <strong>PhD candidate</strong> at <a href="https://www.nju.edu.cn/">Nanjing University</a>,
+                supervised by <a href="https://yoyo000.github.io/">Prof. Yao Yao</a> in <a href="https://3dvv.github.io/">3DV-lab</a>.
+                I am also a member of <a href="https://cite.nju.edu.cn/">CITE lab</a>,
+                working closely with <a href="https://shenqiu.njucite.cn/">Prof. Qiu Shen</a>
+                and <a href="https://cite.nju.edu.cn/People/Faculty/20190621/i5054.html">Prof. Xun Cao</a>.
+                Currently, I am also a <strong>research intern</strong> at RobbyAnt,
+                mentored by <a href="https://justimyhxu.github.io/">Prof. Yinghao Xu</a>.
+                Previously, I was a <strong>master student</strong> at <a href="https://www.nankai.edu.cn/">Nankai University</a>,
+                supervised by <a href="https://mmcheng.net/">Prof. Ming-Ming Cheng</a>.
+              </p>
+              <p class="bio-note">Constructive discussions and collaborations are always welcome. Feel free to reach out via email.</p>
+            </div>
+            <!-- Research interests as inline chips -->
+            <div class="interests-row">
+              <h3 class="interests-heading">Interests</h3>
               <ul class="interests-list">
                 <li>3D Foundation Models</li>
                 <li>World Models</li>
@@ -79,34 +93,10 @@
             </div>
           </div>
         </div>
-        <!-- * my bio -->
-        <div class="biography-section reveal">
-          <div class="bio-content">
-            <p>
-              I am a <strong>PhD candidate</strong> at <a href="https://www.nju.edu.cn/">Nanjing University</a>,
-              supervised by <a href="https://yoyo000.github.io/">Prof. Yao Yao</a> in <a href="https://3dvv.github.io/">3DV-lab</a>.
-              I am also a member of <a href="https://cite.nju.edu.cn/">CITE lab</a>,
-              working closely with <a href="https://shenqiu.njucite.cn/">Prof. Qiu Shen</a>
-              and <a href="https://cite.nju.edu.cn/People/Faculty/20190621/i5054.html">Prof. Xun Cao</a>.
-              Currently, I am also a <strong>research intern</strong> at RobbyAnt,
-              mentored by <a href="https://justimyhxu.github.io/">Prof. Yinghao Xu</a>.
-              Previously, I was a <strong>master student</strong> at <a href="https://www.nankai.edu.cn/">Nankai University</a>,
-              supervised by <a href="https://mmcheng.net/">Prof. Ming-Ming Cheng</a>.
-            </p>
-            <p class="highlight-message">
-              Constructive discussions and cooperations are always welcome.
-              Please feel free to contact me via email.
-            </p>
-          </div>
-        </div>
 
 
         <h1 id="publications" class="reveal">Publications</h1>
-        <p style="color: var(--color-text-muted); margin-bottom: 16px; font-size: 13px;">
-          Representative works are
-          <span class="publication-key">highlighted</span>
-          (* denotes equal contribution)
-        </p>
+        <p class="pub-note">* denotes equal contribution, † corresponding author</p>
 
         <div class="publications-container">
           <div class="publication focus reveal" id="lingbotmap2026">
@@ -125,15 +115,17 @@
                     <u>Lin-Zhuo Chen*</u>, Jian Gao*, Shangzhan Zhang*, Yihang Chen, Nan Xue, Jianyuan Wang, Christian Rupprecht, Xun Cao, Xing Zhu, Yujun Shen, Yao Yao†, Yinghao Xu†
                   </div>
                   <div class="pub-venue">
-                    ECCV 2026, <strong style="color: var(--color-text-primary);">Oral (Long)</strong>,
-                    <strong style="color: var(--color-accent);"><i class="fa fa-trophy" aria-hidden="true"></i> Best Paper Candidate</strong> (10/10,473 = 0.095%)
+                    <span class="venue-tag">ECCV 2026</span>
+                    <span class="venue-tag venue-tag--honor">Oral (Long)</span>
+                    <span class="venue-tag venue-tag--honor"><i class="fa fa-trophy" aria-hidden="true"></i> Best Paper Candidate</span>
+                    <span class="venue-note">10 / 10,473 = 0.095%</span>
                   </div>
                 </div>
                 <div id="lingbotmap-report" hidden>
                   <div class="pub-authors">
                     <u>Lin-Zhuo Chen*</u>, Jian Gao*, Shangzhan Zhang*, Yihang Chen, Ka Leong Cheng, Yipengjing Sun, Liangxiao Hu, Nan Xue, Xing Zhu, Yujun Shen, Yao Yao†, Yinghao Xu†‡
                   </div>
-                  <div class="pub-venue">Technical Report, 2026</div>
+                  <div class="pub-venue"><span class="venue-tag venue-tag--preprint">Technical Report 2026</span></div>
                 </div>
               </div>
               <div class="pub-links">
@@ -157,12 +149,6 @@
                   <i class="fa fa-copy" aria-hidden="true"></i> <span aria-live="polite">BibTeX</span>
                 </button>
               </div>
-              <div class="pub-description">
-                A feed-forward 3D foundation model unifying coordinate grounding, dense geometric cues, and long-range drift correction in a single streaming framework, enabling stable ~20 FPS inference over 10,000+ frames.
-              </div>
-              <div class="pub-badges">
-                <a href="https://trendshift.io/repositories/26049?utm_source=trendshift-badge&amp;utm_medium=badge&amp;utm_campaign=badge-trendshift-26049" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/trendshift/repositories/26049/daily?language=Python" alt="Robbyant/lingbot-map | Trendshift" width="250" height="55"/></a>
-              </div>
             </div>
           </div>
 
@@ -175,9 +161,7 @@
               <div class="pub-authors">
                 Jiahao Wang*, Yufeng Yuan*, Rujie Zheng*, Youtian Lin, Jian Gao, <u>Lin-Zhuo Chen</u>, Yajie Bao, Yi Zhang, Chang Zeng, Yanxi Zhou, Xiaoxiao Long, Hao Zhu, Zhaoxiang Zhang, Xun Cao, Yao Yao†
               </div>
-              <div class="pub-venue">
-                IEEE CVPR, 2026, <strong style="color: var(--color-text-primary);">CCF-A</strong>
-              </div>
+              <div class="pub-venue"><span class="venue-tag">CVPR 2026</span></div>
               <div class="pub-links">
                 <a href="https://arxiv.org/pdf/2509.09676">
                   <i class="fa fa-file-lines" aria-hidden="true"></i> PDF
@@ -205,9 +189,7 @@
               <div class="pub-authors">
                 Tianyu Yuan, Yuanbo Yang, <u>Lin-Zhuo Chen</u>, Yao Yao†, Zhuzhong Qian†
               </div>
-              <div class="pub-venue">
-                ArXiv preprint 2512.04619
-              </div>
+              <div class="pub-venue"><span class="venue-tag venue-tag--preprint">arXiv 2025</span></div>
               <div class="pub-links">
                 <a href="https://arxiv.org/abs/2512.04619">
                   <i class="fa fa-file-lines" aria-hidden="true"></i> PDF
@@ -235,9 +217,7 @@
               <div class="pub-authors">
                 <u>Lin-Zhuo Chen*</u>, Kangjie Liu*, Youtian Lin, Zhihao Li, Siyu Zhu, Xun Cao, Yao Yao†
               </div>
-              <div class="pub-venue">
-                ICLR 2025, <strong style="color: var(--color-text-primary);">CCF-A</strong>
-              </div>
+              <div class="pub-venue"><span class="venue-tag">ICLR 2025</span></div>
               <div class="pub-links">
                 <a href="https://nju-3dv.github.io/projects/fds/fds.pdf">
                   <i class="fa fa-file-lines" aria-hidden="true"></i> PDF
@@ -253,14 +233,11 @@
                   <i class="fa fa-copy" aria-hidden="true"></i> <span aria-live="polite">BibTeX</span>
                 </button>
               </div>
-              <div class="pub-description">
-                We propose Flow Distillation Sampling to regularize 3D Gaussians with pre-trained matching priors, improving reconstruction quality.
-              </div>
             </div>
           </div>
 
           <div class="publication reveal" id="pointrix2024">
-            <div class="pub-image">
+            <div class="pub-image pub-image--contain">
               <img src="./images/Pointrix/logo.png" alt="Pointrix">
             </div>
             <div class="pub-content">
@@ -268,9 +245,7 @@
               <div class="pub-authors">
                 Open Source Project
               </div>
-              <div class="pub-venue">
-                Arxiv Pre-print 2024 (WIP)
-              </div>
+              <div class="pub-venue"><span class="venue-tag venue-tag--preprint">Software 2024</span></div>
               <div class="pub-links">
                 <a href="https://github.com/pointrix-project/pointrix">
                   <i class="fa fa-file-lines" aria-hidden="true"></i> PDF (Coming soon)
@@ -282,9 +257,6 @@
                   <i class="fa fa-github" aria-hidden="true"></i> Code
                   <img class="gh-badge" src="https://img.shields.io/github/stars/pointrix-project/pointrix?style=flat&amp;label=%E2%98%85&amp;labelColor=315e8a&amp;color=315e8a" alt="stars" loading="lazy">
                 </a>
-              </div>
-              <div class="pub-description">
-                A differentiable point-based rendering library supporting 3D Gaussian Splatting and beyond.
               </div>
             </div>
           </div>
@@ -298,9 +270,7 @@
               <div class="pub-authors">
                 <u>Lin-Zhuo Chen</u>, Zheng Lin, Ziqin Wang, Yong-Liang Yang, Ming-Ming Cheng
               </div>
-              <div class="pub-venue">
-                IEEE TIP, 2021, <strong style="color: var(--color-text-primary);">SCI-1, CCF-A</strong>
-              </div>
+              <div class="pub-venue"><span class="venue-tag">IEEE TIP 2021</span></div>
               <div class="pub-links">
                 <a href="https://arxiv.org/abs/2004.04534">
                   <i class="fa fa-file-lines" aria-hidden="true"></i> PDF
@@ -312,9 +282,6 @@
                 <button type="button" class="bibtex-copy" data-bibtex-key="sgnet2021" aria-label="Copy BibTeX for Spatial Information Guided Convolution">
                   <i class="fa fa-copy" aria-hidden="true"></i> <span aria-live="polite">BibTeX</span>
                 </button>
-              </div>
-              <div class="pub-description">
-                We propose spatial information guided convolution for real-time RGBD semantic segmentation.
               </div>
             </div>
           </div>
@@ -328,9 +295,7 @@
               <div class="pub-authors">
                 Zheng Lin, Zhao Zhang, <u>Lin-Zhuo Chen</u>, Ming-Ming Cheng, Shao-Ping Lu
               </div>
-              <div class="pub-venue">
-                IEEE CVPR, 2020, <strong style="color: var(--color-text-primary);">CCF-A</strong>
-              </div>
+              <div class="pub-venue"><span class="venue-tag">CVPR 2020</span></div>
               <div class="pub-links">
                 <a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Lin_Interactive_Image_Segmentation_With_First_Click_Attention_CVPR_2020_paper.pdf">
                   <i class="fa fa-file-lines" aria-hidden="true"></i> PDF
@@ -345,9 +310,6 @@
                 <button type="button" class="bibtex-copy" data-bibtex-key="fclick2020" aria-label="Copy BibTeX for First Click Attention">
                   <i class="fa fa-copy" aria-hidden="true"></i> <span aria-live="polite">BibTeX</span>
                 </button>
-              </div>
-              <div class="pub-description">
-                Interactive image segmentation with first click attention mechanism for improved user interaction.
               </div>
             </div>
           </div>
@@ -364,13 +326,15 @@
               <span class="post-card__date">May 14, 2026</span>
               <span class="post-card__tag post-card__tag--meta">Meta</span>
             </div>
-            <h3 class="post-card__title">Hello, world: starting this blog</h3>
-            <p class="post-card__summary">
-              Why I'm setting up a writing corner on my homepage — and what to expect here.
-            </p>
-            <span class="post-card__read">Read post <span class="arrow">›</span></span>
+            <div class="post-card__body">
+              <h3 class="post-card__title">Hello, world: starting this blog</h3>
+              <p class="post-card__summary">
+                Why I'm setting up a writing corner on my homepage — and what to expect here.
+              </p>
+              <span class="post-card__read">Read post <span class="arrow">›</span></span>
+            </div>
           </a>
-          <!-- Add more <a class="post-card">…</a> here -->
+          <!-- Add more <a class="post-card">…</a> here (date + tag in __meta, text in __body) -->
         </div>
 
         <!-- Footer -->
