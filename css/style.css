@@ -14,30 +14,30 @@
   /* UI — Inter for controls, tags, meta text */
   --font-ui: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
   --font-cjk: "Noto Serif SC", "Songti SC", "SimSun", serif;
-  /* Primary — deep ink blue: links, controls, navigation ("clickable") */
-  --color-primary: #1e4e8c;
-  --color-primary-hover: #163b6b;
-  --color-primary-subtle: rgba(30, 78, 140, 0.08);
-  /* Accent — deep teal: awards, highlights, "important" */
-  --color-accent: #0f766e;
-  --color-accent-hover: #0b5c56;
-  --color-accent-subtle: rgba(15, 118, 110, 0.11);
-  /* Slate gray for the welcome note */
-  --color-sage: #5f6b7a;
-  --color-sage-hover: #4a5563;
-  --color-sage-subtle: rgba(95, 107, 122, 0.09);
+  /* Primary — near-black: links, controls, navigation ("clickable") */
+  --color-primary: #1a1a1a;
+  --color-primary-hover: #000000;
+  --color-primary-subtle: rgba(0, 0, 0, 0.06);
+  /* Accent — the single colour on the page: awards, highlights, "important" */
+  --color-accent: #1d4ed8;
+  --color-accent-hover: #1e40af;
+  --color-accent-subtle: rgba(29, 78, 216, 0.10);
+  /* Neutral gray for the welcome note */
+  --color-sage: #6b7280;
+  --color-sage-hover: #4b5563;
+  --color-sage-subtle: rgba(107, 114, 128, 0.09);
   /* Representative papers share the accent (kept under the old names) */
   --color-burgundy: var(--color-accent);
   --color-burgundy-hover: var(--color-accent-hover);
-  --color-burgundy-subtle: rgba(15, 118, 110, 0.06);
-  /* Text — cool slate hierarchy */
-  --color-text-primary: #16202b;
-  --color-text-secondary: #3f4b59;
-  --color-text-muted: #6f7b8a;
-  /* Backgrounds — cool white */
-  --color-border: #d9e0e8;
-  --color-background: #f8fafc;
-  --color-background-subtle: #eef2f6;
+  --color-burgundy-subtle: rgba(29, 78, 216, 0.05);
+  /* Text — neutral gray hierarchy */
+  --color-text-primary: #111111;
+  --color-text-secondary: #444444;
+  --color-text-muted: #777777;
+  /* Backgrounds — pure white */
+  --color-border: #e5e5e5;
+  --color-background: #ffffff;
+  --color-background-subtle: #f5f5f5;
 
   /* Shadows */
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -57,24 +57,24 @@
 
 /* Dark mode variables */
 [data-theme="dark"] {
-  --color-primary: #8ab4f8;
-  --color-primary-hover: #adc8fa;
-  --color-primary-subtle: rgba(138, 180, 248, 0.12);
-  --color-accent: #5eead4;
-  --color-accent-hover: #99f6e4;
-  --color-accent-subtle: rgba(94, 234, 212, 0.12);
-  --color-sage: #94a3b8;
-  --color-sage-hover: #b6c2d1;
-  --color-sage-subtle: rgba(148, 163, 184, 0.12);
+  --color-primary: #f0f0f0;
+  --color-primary-hover: #ffffff;
+  --color-primary-subtle: rgba(255, 255, 255, 0.08);
+  --color-accent: #7aa2ff;
+  --color-accent-hover: #9db8ff;
+  --color-accent-subtle: rgba(122, 162, 255, 0.14);
+  --color-sage: #9a9a9a;
+  --color-sage-hover: #b8b8b8;
+  --color-sage-subtle: rgba(154, 154, 154, 0.12);
   --color-burgundy: var(--color-accent);
   --color-burgundy-hover: var(--color-accent-hover);
-  --color-burgundy-subtle: rgba(94, 234, 212, 0.06);
-  --color-text-primary: #e6edf3;
-  --color-text-secondary: #b9c4d0;
-  --color-text-muted: #8593a3;
-  --color-border: #263241;
-  --color-background: #0d1117;
-  --color-background-subtle: #161c25;
+  --color-burgundy-subtle: rgba(122, 162, 255, 0.07);
+  --color-text-primary: #ededed;
+  --color-text-secondary: #b5b5b5;
+  --color-text-muted: #808080;
+  --color-border: #2a2a2a;
+  --color-background: #111111;
+  --color-background-subtle: #1a1a1a;
   --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
   --shadow-md: 0 4px 10px -2px rgba(0, 0, 0, 0.5);
   --shadow-lg: 0 10px 20px -5px rgba(0, 0, 0, 0.6);
@@ -161,12 +161,12 @@ body {
   z-index: 100;
   padding: 14px 0;
   backdrop-filter: blur(8px);
-  background-color: rgba(248, 250, 252, 0.88);
+  background-color: rgba(255, 255, 255, 0.88);
   transition: background-color var(--transition-base), border-color var(--transition-base);
 }
 
 [data-theme="dark"] .top-nav {
-  background-color: rgba(13, 17, 23, 0.88);
+  background-color: rgba(17, 17, 17, 0.88);
 }
 
 .nav-container {
